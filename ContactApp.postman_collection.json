@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "4eb86b59-5716-42bd-96f0-cf23a1a0f8b7",
+		"name": "ContactApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39137305"
+	},
+	"item": [
+		{
+			"name": "contacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/contacts",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"contacts"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET http://127.0.0.1:8000/api/contacts"
+			},
+			"response": []
+		},
+		{
+			"name": "addContact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"John Doe\", \"phone\": \"+90 333 1234567\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/contacts",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"contacts"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://127.0.0.1:8000/api/contacts \\\n     -H \"Content-Type: application/json\" \\\n     -d '{\"name\": \"John Doe\", \"phone\": \"+90 333 1234567\"}'"
+			},
+			"response": []
+		},
+		{
+			"name": "import-xml",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "contacts.xml"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/contacts/import-xml",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"contacts",
+						"import-xml"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST -F \"file=@contacts.xml\" http://127.0.0.1:8000/api/contacts/import-xml\r\n"
+			},
+			"response": []
+		}
+	]
+}
