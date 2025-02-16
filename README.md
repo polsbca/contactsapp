@@ -1,66 +1,151 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Contacts CRUD Application
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This is a simple **CRUD (Create, Read, Update, Delete)** application built using **Laravel** that allows users to manage their contacts. It also supports **bulk import of contacts using XML**.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## **Features**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+✅ Create, Read, Update, and Delete Contacts\
+✅ Bulk Import Contacts from XML\
+✅ Laravel 10 with Vite and Vue.js\
+✅ MySQL Database Support\
+✅ API Endpoints for Contact Management
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## **Installation**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### **1. Clone the Repository**
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```sh
+git clone https://github.com/your-repo/contacts-app.git
+cd contacts-app
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### **2. Install Dependencies**
 
-## Laravel Sponsors
+```sh
+composer install
+npm install
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### **3. Configure Environment**
 
-### Premium Partners
+- Copy `.env.example` to `.env`:
+  ```sh
+  cp .env.example .env
+  ```
+- Update database credentials in `.env`:
+  ```env
+  DB_CONNECTION=mysql
+  DB_HOST=127.0.0.1
+  DB_PORT=3306
+  DB_DATABASE=your_database
+  DB_USERNAME=your_username
+  DB_PASSWORD=your_password
+  ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### **4. Generate Application Key**
 
-## Contributing
+```sh
+php artisan key:generate
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### **5. Run Migrations**
 
-## Code of Conduct
+```sh
+php artisan migrate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### **6. Start the Development Server**
 
-## Security Vulnerabilities
+```sh
+php artisan serve
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### **7. Run Vite for Frontend Assets**
 
-## License
+```sh
+npm run dev
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Now visit [**http://127.0.0.1:8000**](http://127.0.0.1:8000) to see the app in action!
+
+---
+
+## **Folder Structure**
+
+```
+📦 contacts-app
+├── 📂 app            # Laravel Application Files
+├── 📂 bootstrap      # Laravel Bootstraping
+├── 📂 config         # Application Configurations
+├── 📂 database       # Migrations & Seeders
+├── 📂 public         # Public Assets
+├── 📂 resources      # Views, JS, CSS
+├── 📂 routes         # Web & API Routes
+├── 📂 storage        # Logs & Uploaded Files
+├── 📂 tests          # Automated Tests
+├── .env.example      # Example Environment File
+├── package.json      # NPM Dependencies
+├── vite.config.js    # Vite Configuration
+└── README.md         # Project Documentation
+```
+
+---
+
+## **Bulk Import Contacts from XML**
+
+To bulk import contacts using an XML file, follow these steps:
+
+### **1. Sample XML Format**
+
+```xml
+<contacts>
+    <contact>
+        <name>John Doe</name>
+        <phone>+90 333 8859342</phone>
+    </contact>
+    <contact>
+        <name>Jane Doe</name>
+        <phone>+90 333 1563682</phone>
+    </contact>
+</contacts>
+```
+
+### **2. Upload XML File**
+
+- Go to the **Import Contacts** page in the app.
+- Select the XML file and upload.
+- Contacts will be stored in the database.
+
+---
+
+## **API Endpoints**
+
+| Method | Endpoint             | Description          |
+| ------ | -------------------- | -------------------- |
+| GET    | `/api/contacts`      | Get all contacts     |
+| POST   | `/api/contacts`      | Create a new contact |
+| GET    | `/api/contacts/{id}` | Get a single contact |
+| PUT    | `/api/contacts/{id}` | Update a contact     |
+| DELETE | `/api/contacts/{id}` | Delete a contact     |
+
+---
+
+## **Troubleshooting**
+
+1. **Error: "Vite manifest not found"**
+   - Run `npm run build` or `npm run dev`
+2. **Error: "Database connection refused"**
+   - Check `.env` and ensure MySQL is running.
+
+---
+
+## **License**
+
+This project is licensed under the **MIT License**.
+
+---
+
