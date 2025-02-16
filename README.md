@@ -8,7 +8,7 @@ This is a simple **CRUD (Create, Read, Update, Delete)** application built using
 
 ✅ Create, Read, Update, and Delete Contacts\
 ✅ Bulk Import Contacts from XML\
-✅ Laravel 10 with Vite and Vue.js\
+✅ Laravel 11 with Vite and Vue.js\
 ✅ MySQL Database Support\
 ✅ API Endpoints for Contact Management
 
