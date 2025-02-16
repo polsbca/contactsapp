@@ -3,8 +3,11 @@
       <h2 class="text-2xl font-bold mb-4">Contact List</h2>
   
       <!-- File Upload for XML Import -->
+      <label>Bulk Contacts Upload:</label>
       <input type="file" @change="uploadXML" class="mb-4" />
-  
+      <br />
+      <label>Single Contact Upload:</label>
+      <br />
       <!-- Add New Contact Form -->
       <form @submit.prevent="addContact" class="mb-4">
         <input v-model="newContact.name" placeholder="Name" class="border p-2" />
